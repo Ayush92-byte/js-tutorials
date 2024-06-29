@@ -12,7 +12,7 @@ let userEmail;
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
-console.log(id == anotherId);
+// console.log(id == anotherId);
 
 // Reference(Non-primitive) type -> Reference can be allocate in the memory.
 
@@ -31,3 +31,26 @@ const myFunc = function() {
 
 // to find datatype : use of typeof
 
+// ++++++++++++
+
+// Stack (primitive),
+// Heap (Non-Primitive)
+
+let myname = "ayush"
+let anotherName = myname
+anotherName = "ayush1"
+
+console.log(anotherName);
+console.log(anotherName);
+
+let user1 = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let user2 = user1
+
+user2.email = "ayush@gmail.com"
+
+console.log(user1.email);
+console.log(user2.email);
