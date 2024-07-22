@@ -1,0 +1,64 @@
+Javascript Execution Context(EC)
+
+{} -> 1. Global EC
+-> global EC will always form and it will store/put in this variable.
+-> GEC of browser is different from that of node.js environment. Important is of browser and value of this variable comes out to be window variable.
+
+2. Function EC
+3. Eval EC (property of global object)
+
+{}-> memory creation phase and Execution phase
+
+Eg., How this code will execute in js
+
+let val1 = 10
+let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+let result1 = addNum(val1, val2)
+let result2 = addNum(10, 2)
+
+1-> Global execution store in this variable.
+2-> memory phase --
+val1 ->undefined
+val2 -> undefined
+addNum -> definition
+result1 -> undefined
+result2 -> undefined
+3-> execution phase --
+val1 <- 10
+val2 <- 5
+           ----------------
+addNum -> |  new variable  | 
+          |   environment  |
+          |       +        |
+          |    Execution   |
+          |     Thread     |      
+           ----------------
+
+we have to do this again for new function -- memory phase and execution phase
+
+memory phase --
+val1 -> undefined
+val2 -> undefined
+total -> undefined
+
+execution phase --
+num1 -> 10
+num2 -> 5
+total -> 15 --> it returns to global EC
+
+when function returns something, then the new EC will gets delete.
+
+
+result1 -> 15
+result2 -> 12
+
+-------------------------
+
+CALL STACK - LIFO order execution
+
+
+
