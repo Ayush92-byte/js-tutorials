@@ -1,0 +1,15 @@
+javascript is synchronus and single threaded language.
+
+execution context -> execute one line at a time. each operations waits for the last one to complete before executing.
+
+Blocking code -> it blocks the flow of program. Read file Sync (i.e., program will have to wait until the job is done.)
+
+Non Blocking code -> it doesn't blocks the flow of program. Read file ASync (i.e., program will don't have to wait until the job is done.)
+
+JS Engine = memory heap + call stacks
+
+dom api is found in web api not in node.
+
+when a call is initiate from call stack then it goes to register call back and from there -> it will gets store in task queue which then add to the call stacks.
+
+some new Api's have been introduced in Js, like fetch(),it stores in promise queue which has a higher priority than task queue but end up adding the task to call stack.
